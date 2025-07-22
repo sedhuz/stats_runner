@@ -46,6 +46,18 @@ public class PropertiesAPI {
 		return getProperty(PROPERTIES.DB_HOSTS).split(",");
 	}
 
+	public static String getSkippedDBsRegex() {
+		return getProperty(PROPERTIES.DB_SKIPPED_DBS_REGEX);
+	}
+
+	public static Integer getMaxThreads() {
+		return Integer.parseInt(getProperty(PROPERTIES.APP_THREADS, "6"));
+	}
+
+	public static Boolean isParallelEnabled() {
+		return Boolean.parseBoolean(getProperty(PROPERTIES.APP_PARALLEL_ENABLED, "false"));
+	}
+
 	public static String getLogDir() {
 		return getProperty(PROPERTIES.LOG_DIR);
 	}
@@ -60,11 +72,16 @@ public class PropertiesAPI {
 		return DateTimeFormatter.ofPattern(pattern);
 	}
 
-	public static String getInputDir() {
-		return getProperty(PROPERTIES.INPUT_DIR);
+	public static String getInputFile() {
+		return getProperty(PROPERTIES.INPUT_FILE);
 	}
 
 	public static String getOutputDir() {
 		return getProperty(PROPERTIES.OUTPUT_DIR);
+	}
+
+	public static DateTimeFormatter getOutputDateTimeFormatterForFile() {
+		String pattern = getProperty(PROPERTIES.OUTPUT_DATE_TIME_FORMAT_FOR_FILE, "yyyy-MM-dd HH:mm:ss");
+		return DateTimeFormatter.ofPattern(pattern);
 	}
 }
