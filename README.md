@@ -69,9 +69,8 @@ output.datetimeformatforfile=dd-MMM-yyyy_hh:mm:ssa
 
 ### ⚠️ Notes
 - Switch expressions require Java 14+. Set proper --release in IntelliJ or Gradle:
-- Settings > Build, Execution, Deployment > Compiler > Java Compiler
-- Set Target bytecode version to 17 or 21
-- Optimize max.threads based on system load and number of hosts
+- Settings > Build, Execution, Deployment > Compiler > Java Compiler (in intelliJ) and set target bytecode version to 17 or 21
+- Optimize `app.maxthreads` threads based on system load and number of hosts
 
 ---
 
