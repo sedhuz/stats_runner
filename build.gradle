@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClass = 'StatsRunner'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("com.mysql:mysql-connector-j:9.3.0")
+}
