@@ -21,11 +21,22 @@
 
 ```
 src/
-├── db/              # Database API
-├── io/              # IO utilities
-├── log/             # Logging system
-├── properties/      # Property loader (hosts, regex, threads, etc.)
-└── StatsRunner.java # Main entry point
+├── main/
+│   ├── java/
+│   │   ├── db/                # Database API
+│   │   ├── io/                # IO utilities
+│   │   ├── log/               # Logging system
+│   │   ├── properties/        # Property loader
+│   │   └── StatsRunner.java   # Main entry point
+│   └── resources/
+│       ├── config/
+│       │   └── app.properties     # Configuration values (hosts, thread counts, date format, etc.)
+│       ├── input/
+│       │   └── input.sql          # SQL queries to be run across DBs
+│       ├── output/
+│       │   └── result_**.csv      # Output CSVs with query results
+│       └── log/
+│           └── **.log             # Logs (query executions, timings, successes, failures, skipped DBs)
 ```
 
 ### 🛠️ Configuration (via `PropertiesAPI`)
